@@ -1,4 +1,18 @@
- function distance(a, b) {
+function checkPassword() {
+  const input = document.getElementById("passwordInput").value;
+  const errorMsg = document.getElementById("loginError");
+
+  const correctPassword = "iloveyou"; // You can change this
+
+  if (input === correctPassword) {
+    document.getElementById("loginScreen").style.display = "none";
+    document.getElementById("mainRoom").classList.remove("hidden");
+  } else {
+    errorMsg.textContent = "Wrong password! Try again ❤️";
+  }
+}
+
+function distance(a, b) {
   const ax = a.offsetLeft, ay = a.offsetTop;
   const bx = b.offsetLeft, by = b.offsetTop;
   return Math.sqrt((ax - bx) ** 2 + (ay - by) ** 2);
@@ -109,4 +123,35 @@ function checkPassword() {
   } else {
     errorMsg.textContent = "Wrong password! Try again ❤️";
   }
+}
+function startEmojiGame() {
+  const gameContainer = document.createElement("div");
+  gameContainer.className = "emojiGame";
+  document.body.appendChild(gameContainer);
+
+  let score = 0;
+
+  function spawnEmoji() {startEmojiGame();
+    const emoji = document.createElement("div");
+    emoji.className = "fallingEmoji";
+    emoji.textContent = ["💖", "😘", "💋", "😍", "🌹"][Math.floor(Math.random() * 5)];
+    emoji.style.left = Math.random() * window.innerWidth + "px";
+    gameContainer.appendChild(emoji);
+
+    emoji.addEventListener("click", () => {
+      score++;
+      emoji.remove();
+      if (score === 5) {
+        alert("✨ Great job! You're spreading the love!");
+      }
+    });
+
+    setTimeout(() => emoji.remove(), 5000);
+  }
+
+  for (let i = 0; i < 30; i++) {
+    setTimeout(spawnEmoji, i * 600);
+  }
+
+  setTimeout(() => gameContainer.remove(), 20000);
 }
