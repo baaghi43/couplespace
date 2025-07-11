@@ -97,3 +97,16 @@ function startEmojiGame() {
 
   setTimeout(() => gameContainer.remove(), 20000);
 }
+function checkPassword() {
+  const input = document.getElementById("passwordInput").value;
+  const errorMsg = document.getElementById("loginError");
+
+  const correctPassword = "iloveyou"; // you can change this password
+
+  if (input === correctPassword) {
+    document.getElementById("loginScreen").style.display = "none";
+    document.getElementById("mainRoom").classList.remove("hidden");
+  } else {
+    errorMsg.textContent = "Wrong password! Try again ❤️";
+  }
+}
