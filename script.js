@@ -1,47 +1,37 @@
- body {
-  margin: 0;
-  background: linear-gradient(to bottom, #ffe4e1, #fff0f5);
-  font-family: sans-serif;
+ function distance(a, b) {
+  const ax = a.offsetLeft, ay = a.offsetTop;
+  const bx = b.offsetLeft, by = b.offsetTop;
+  return Math.sqrt((ax - bx) ** 2 + (ay - by) ** 2);
 }
 
-.room {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background: url('https://i.imgur.com/zp0BhqT.png') no-repeat center center;
-  background-size: cover;
+function checkInteraction() {
+  const daood = document.getElementById("daood");
+  const saima = document.getElementById("saima");
+  const popup = document.getElementById("chatPopup");
+
+  if (distance(daood, saima) < 80) {
+    popup.classList.remove("hidden");
+  }
 }
 
-.avatar {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  font-size: 2rem;
-  cursor: pointer;
+function closePopup() {
+  document.getElementById("chatPopup").classList.add("hidden");
 }
 
-.daood {
-  top: 20%;
-  left: 20%;
-}
+// Move avatar with arrow keys
+document.addEventListener("keydown", function(e) {
+  const daood = document.getElementById("daood");
+  const step = 10;
+  let top = daood.offsetTop;
+  let left = daood.offsetLeft;
 
-.saima {
-  top: 60%;
-  left: 60%;
-}
+  if (e.key === "ArrowUp") top -= step;
+  if (e.key === "ArrowDown") top += step;
+  if (e.key === "ArrowLeft") left -= step;
+  if (e.key === "ArrowRight") left += step;
 
-.popup {
-  position: absolute;
-  top: 30%;
-  left: 30%;
-  background: white;
-  padding: 1rem;
-  border: 2px solid #ff69b4;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
+  daood.style.top = top + "px";
+  daood.style.left = left + "px";
 
-.hidden {
-  display: none;
-}
+  checkInteraction();
+});
