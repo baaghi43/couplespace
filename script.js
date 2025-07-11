@@ -53,4 +53,23 @@ function enterRoom(name) {
 
   popup.classList.remove("hidden");
 }
+case "kitchen":
+  text.textContent = "🍳 Kitchen time! Cook up some memories together.";
+  break;
+
+case "bedroom":
+  text.textContent = "🛏️ Bedroom vibes. Share cozy moments or sleepy notes.";
+  break;
+
+case "play":
+  text.textContent = "🎮 Let's play! Games and giggles ahead.";
+  break;
+
+case "washroom":
+  text.textContent = "🚿 Washroom surprise! Maybe a bubbly message? 😄";
+  break;
+
+case "garden":
+  text.textContent = "🌷 Step into the Garden. A peaceful place to plant love.";
+  break;
 
