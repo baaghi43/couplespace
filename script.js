@@ -72,4 +72,15 @@ case "washroom":
 case "garden":
   text.textContent = "🌷 Step into the Garden. A peaceful place to plant love.";
   break;
+function spawnHeart() {
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.style.left = Math.random() * window.innerWidth + 'px';
+  heart.style.top = window.innerHeight + 'px';
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 8000);
+}
+
+setInterval(spawnHeart, 800); // every 0.8 seconds
 
