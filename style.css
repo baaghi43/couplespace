@@ -1,15 +1,16 @@
  body {
   margin: 0;
-  background: linear-gradient(to bottom, #ffe4e1, #fff0f5);
-  font-family: sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
 }
 
 .room {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: url('https://i.imgur.com/zp0BhqT.png') no-repeat center center;
-  background-size: cover;
+  background: linear-gradient(to top left, #fff0f5, #fce4ec);
+  animation: pulseBG 10s infinite ease-in-out;
 }
 
 .avatar {
