@@ -35,3 +35,22 @@ document.addEventListener("keydown", function(e) {
 
   checkInteraction();
 });
+function enterRoom(name) {
+  const popup = document.getElementById("roomPopup");
+  const text = document.getElementById("popupText");
+
+  switch (name) {
+    case "lounge":
+      text.textContent = "Welcome to the 💬 Lounge Room! Chat and relax.";
+      break;
+    case "dream":
+      text.textContent = "Welcome to the 📝 Dream Board! Add couple goals.";
+      break;
+    case "photo":
+      text.textContent = "Welcome to the 📸 Memory Wall! Upload your memories.";
+      break;
+  }
+
+  popup.classList.remove("hidden");
+}
+
