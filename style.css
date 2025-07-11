@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(to right, #ffe4e1, #fff0f5);
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #ff69b4;
+  color: white;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 {
+  font-family: cursive;
+  margin-bottom: 1rem;
+}
+
+.sidebar button {
+  display: block;
+  background: white;
+  color: #ff69b4;
+  border: none;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
