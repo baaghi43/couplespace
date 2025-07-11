@@ -1,73 +1,47 @@
-  function loadSection(section) {
-  const panel = document.getElementById("mainPanel");
-
-  switch (section) {
-    case 'chat':
-      panel.innerHTML = `
-        <h3>💬 Chat Room</h3>
-        <div><input type="text" id="chatInput" placeholder="Say something sweet..." />
-        <button onclick="sendChat()">Send</button></div>
-        <div id="chatLog"></div>`;
-      break;
-
-    case 'tasks':
-      panel.innerHTML = `
-        <h3>📝 Dream Board</h3>
-        <ul id="taskList"></ul>
-        <input type="text" id="taskInput" placeholder="Add a couple goal..." />
-        <button onclick="addTask()">Add</button>`;
-      break;
-
-    case 'photos':
-      panel.innerHTML = `
-        <h3>📸 Memory Wall</h3>
-        <input type="file" id="photoInput" accept="image/*" />
-        <input type="text" id="captionInput" placeholder="Caption your moment..." />
-        <button onclick="uploadPhoto()">Upload</button>
-        <div id="photoGallery"></div>`;
-      break;
-
-    case 'music':
-      panel.innerHTML = `
-        <h3>🎶 Shared Playlist</h3>
-        <iframe width="300" height="80" src="https://www.youtube.com/embed/2Vv-BfVoq4g" frameborder="0" allowfullscreen></iframe>`;
-      break;
-  }
+ body {
+  margin: 0;
+  background: linear-gradient(to bottom, #ffe4e1, #fff0f5);
+  font-family: sans-serif;
 }
 
-function sendChat() {
-  const msg = document.getElementById("chatInput").value;
-  const log = document.getElementById("chatLog");
-  if (msg.trim()) {
-    const entry = document.createElement("p");
-    entry.textContent = "💌 " + msg;
-    log.appendChild(entry);
-    document.getElementById("chatInput").value = '';
-  }
+.room {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url('https://i.imgur.com/zp0BhqT.png') no-repeat center center;
+  background-size: cover;
 }
 
-function addTask() {
-  const task = document.getElementById("taskInput").value;
-  if (task.trim()) {
-    const li = document.createElement("li");
-    li.textContent = "🌟 " + task;
-    document.getElementById("taskList").appendChild(li);
-    document.getElementById("taskInput").value = '';
-  }
+.avatar {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
-function uploadPhoto() {
-  const fileInput = document.getElementById("photoInput");
-  const caption = document.getElementById("captionInput").value;
-  const gallery = document.getElementById("photoGallery");
+.daood {
+  top: 20%;
+  left: 20%;
+}
 
-  if (!fileInput.files.length) return;
+.saima {
+  top: 60%;
+  left: 60%;
+}
 
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    const div = document.createElement("div");
-    div.innerHTML = `<img src="${e.target.result}" style="width:100px;border-radius:10px;"><p>${caption}</p>`;
-    gallery.appendChild(div);
-  };
-  reader.readAsDataURL(fileInput.files[0]);
+.popup {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  background: white;
+  padding: 1rem;
+  border: 2px solid #ff69b4;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.hidden {
+  display: none;
 }
