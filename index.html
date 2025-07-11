@@ -20,3 +20,30 @@
   <script src="script.js"></script>
 </body>
 </html>
+<div class="room">
+  <div id="daood" class="avatar daood">🧍‍♂️</div>
+  <div id="saima" class="avatar saima">🧍‍♀️</div>
+
+  <div class="door" onclick="enterRoom('lounge')" style="top:30%;left:10%;">💬 Lounge</div>
+  <div class="door" onclick="enterRoom('dream')" style="top:50%;left:80%;">📝 Dreams</div>
+  <div class="door" onclick="enterRoom('photo')" style="top:75%;left:30%;">📸 Memories</div>
+</div>
+
+<div class="popup hidden" id="roomPopup">
+  <p id="popupText"></p>
+  <button onclick="closePopup()">Close</button>
+</div>
+<div class="room">
+  <div id="daood" class="avatar daood">🧍‍♂️</div>
+  <div id="saima" class="avatar saima">🧍‍♀️</div>
+
+  <!-- Room doors -->
+  <div class="door" onclick="enterRoom('lounge')" style="top:20%;left:10%;">💬 Lounge</div>
+  <div class="door" onclick="enterRoom('dream')" style="top:20%;left:75%;">📝 Dreams</div>
+  <div class="door" onclick="enterRoom('photo')" style="top:40%;left:15%;">📸 Memories</div>
+  <div class="door" onclick="enterRoom('kitchen')" style="top:40%;left:70%;">🍳 Kitchen</div>
+  <div class="door" onclick="enterRoom('bedroom')" style="top:60%;left:10%;">🛏️ Bedroom</div>
+  <div class="door" onclick="enterRoom('play')" style="top:60%;left:70%;">🎮 Play Area</div>
+  <div class="door" onclick="enterRoom('washroom')" style="top:75%;left:30%;">🚿 Washroom</div>
+  <div class="door" onclick="enterRoom('garden')" style="top:75%;left:60%;">🌷 Garden</div>
+</div>
