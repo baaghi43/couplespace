@@ -2,35 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CoupleHome Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CoupleSpace</title>
   <link rel="stylesheet" href="style.css" />
- <link rel="stylesheet" href="style.css" />
-<script src="script.js"></script>
 </head>
 <body>
-  <!-- Login Gate -->
-  <div class="loginScreen" id="loginScreen">
-    <h2>Welcome to CoupleHome 💖</h2>
-    <input type="password" id="passwordInput" placeholder="Enter your secret password" />
-    <button onclick="checkPassword()">Enter</button>
-    <p id="loginError" style="color: red;"></p>
-  </div>
+  <h1>💖 Welcome to CoupleSpace 💖</h1>
 
-  <!-- Hidden Virtual Room (unlocked after login) -->
-  <div class="room hidden" id="mainRoom">
-    <div id="daood" class="avatar daood">🧍‍♂️</div>
-    <div id="saima" class="avatar saima">🧍‍♀️</div>
+  <div class="room" data-room="lounge">💬</div>
+  <div class="room" data-room="dream">📝</div>
+  <div class="room" data-room="photo">📸</div>
+  <div class="room" data-room="kitchen">🍳</div>
+  <div class="room" data-room="bedroom">🛏️</div>
+  <div class="room" data-room="play">🎮</div>
+  <div class="room" data-room="washroom">🚿</div>
+  <div class="room" data-room="garden">🌷</div>
 
-    <!-- Doors -->
-    <div class="door" onclick="enterRoom('play')" style="top:55%;left:75%;">🎮 Play Area</div>
-    <div class="door" onclick="enterRoom('bedroom')" style="top:55%;left:10%;">🛏️ Bedroom</div>
-    <div class="door" onclick="enterRoom('garden')" style="top:70%;left:60%;">🌷 Garden</div>
-  </div>
-
-  <div class="popup hidden" id="roomPopup">
+  <div id="roomPopup" class="hidden">
     <p id="popupText"></p>
-    <button onclick="closePopup()">Close</button>
   </div>
 
   <script src="script.js"></script>
