@@ -101,3 +101,34 @@
   0% { top: -50px; opacity: 1; }
   100% { top: 100vh; opacity: 0; }
 }
+.loginScreen {
+  position: fixed;
+  top: 30%;
+  left: 30%;
+  background: white;
+  padding: 2rem;
+  border: 3px solid #ff69b4;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  text-align: center;
+  z-index: 100;
+}
+
+.loginScreen input {
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.loginScreen button {
+  margin-top: 1rem;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
