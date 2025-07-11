@@ -3,24 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CoupleSpace HQ</title>
+  <title>CoupleSpace Room</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <aside class="sidebar">
-    <h2>💖 CoupleSpace</h2>
-    <nav>
-      <button onclick="loadSection('chat')">💬 Chat Room</button>
-      <button onclick="loadSection('tasks')">📝 Dream Board</button>
-      <button onclick="loadSection('photos')">📸 Memory Wall</button>
-      <button onclick="loadSection('music')">🎶 Playlist</button>
-    </nav>
-  </aside>
+  <div class="room">
+    <div id="daood" class="avatar daood">🧍‍♂️</div>
+    <div id="saima" class="avatar saima">🧍‍♀️</div>
+  </div>
 
-  <main id="mainPanel">
-    <h3>Welcome, Daood & Saima!</h3>
-    <p>Choose a section from the sidebar to begin.</p>
-  </main>
+  <div class="popup hidden" id="chatPopup">
+    <p>💬 Daood & Saima can talk now!</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
